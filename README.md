@@ -20,13 +20,7 @@ Bot kombinuje více oblastí IT:
 
 ---
 
-## 🛠️ Použité technologie
-- **Python 3.10+**
-- [discord.py](https://github.com/Rapptz/discord.py) – knihovna pro Discord API  
-- [SQLite3](https://www.sqlite.org/index.html) – databáze pro ukládání uživatelských dat  
-- scraping kurzů  
-- získávání HTML stránek  
-- Volitelně: **PostgreSQL / MySQL** (pokud bude projekt nasazen na server)  
+
 
 ---
 
