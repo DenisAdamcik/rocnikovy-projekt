@@ -1,6 +1,6 @@
 # rocnikovy-projekt
 
-ento projekt je **ročníkový projekt**, jehož cílem je vytvořit Discord bota, který umožní uživatelům sázet **fiktivní kredity** na sportovní zápasy.  
+Tento projekt je **ročníkový projekt**, jehož cílem je vytvořit Discord bota, který umožní uživatelům sázet **fiktivní kredity** na sportovní zápasy.  
 Kurzy budou získávány pomocí **web scrapingu** ze sázkových webů (pouze demonstračně).  
 
 Bot kombinuje více oblastí IT:
