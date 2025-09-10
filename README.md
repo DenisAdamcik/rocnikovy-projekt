@@ -24,8 +24,8 @@ Bot kombinuje více oblastí IT:
 - **Python 3.10+**
 - [discord.py](https://github.com/Rapptz/discord.py) – knihovna pro Discord API  
 - [SQLite3](https://www.sqlite.org/index.html) – databáze pro ukládání uživatelských dat  
-- [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/) – scraping kurzů  
-- [Requests](https://pypi.org/project/requests/) – získávání HTML stránek  
+- scraping kurzů  
+- získávání HTML stránek  
 - Volitelně: **PostgreSQL / MySQL** (pokud bude projekt nasazen na server)  
 
 ---
