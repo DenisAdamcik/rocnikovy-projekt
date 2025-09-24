@@ -1,16 +1,8 @@
 # 🤖 Line Follower Robot
 
-Tento projekt je ročníkovou prací v oboru **Informační technologie**.  
 Cílem je vytvořit robota, který dokáže autonomně sledovat čáru na povrchu pomocí mikrokontroléru Arduino.
 
----
 
-## 📌 Obsah
-- [Popis projektu](#-popis-projektu)
-- [Plán práce](#-plán-práce)
-- [Ukázkový kód](#-ukázkový-kód)
-- [Možná vylepšení](#-možná-vylepšení)
-- [Licence](#-licence)
 
 ---
 
