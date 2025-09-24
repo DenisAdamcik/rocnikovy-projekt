@@ -18,4 +18,12 @@ Robot sleduje černou čáru na světlém povrchu. Logika je založená na jedno
 4. Rozšíření o pokročilejší funkce (např. PID regulace, více senzorů)  
 5. Dokumentace a příprava prezentace  
 
+senzor:
+https://techfun.cz/produkt/modul-sledovani-cary-pro-auticka/
+motor:
+https://techfun.sk/en/product/dc-motor-130-with-double-sided-axle-3v/?utm_source=chatgpt.com
+baterky:
+https://techfun.sk/en/produkt/ups-18650-battery-shield-v8-rozne-varianty/
+
+
 <img width="900" height="655" alt="image" src="https://github.com/user-attachments/assets/cdb28fd6-1052-4bd7-a42c-9cfe4a2debfc" />
