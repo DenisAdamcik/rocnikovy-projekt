@@ -15,8 +15,7 @@ Robot sleduje černou čáru na světlém povrchu. Logika je založená na jedno
 1. Příprava podvozku a základní konstrukce  
 2. Implementace jednoduchého algoritmu sledování čáry  
 3. Testování na základní trati  
-4. Rozšíření o pokročilejší funkce (např. PID regulace, více senzorů)  
-5. Dokumentace a příprava prezentace  
+4. Dokumentace a příprava prezentace  
 
 senzor:
 https://techfun.cz/produkt/modul-sledovani-cary-pro-auticka/
