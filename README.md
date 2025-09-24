@@ -1,33 +1,28 @@
-# rocnikovy-projekt
+# 🤖 Line Follower Robot
 
-Tento projekt je **ročníkový projekt**, jehož cílem je vytvořit Discord bota, který umožní uživatelům sázet **fiktivní kredity** na sportovní zápasy.  
-Kurzy budou získávány pomocí **web scrapingu** ze sázkových webů (pouze demonstračně).  
-
-Bot kombinuje více oblastí IT:
-- práci s **API** (Discord bot),
-- **databáze** (SQLite / PostgreSQL),
-- **web scraping** (získávání kurzů),
-- **herní logiku** (správa sázek, výpočty výher).
+Tento projekt je ročníkovou prací v oboru **Informační technologie**.  
+Cílem je vytvořit robota, který dokáže autonomně sledovat čáru na povrchu pomocí mikrokontroléru Arduino.
 
 ---
 
-## 🎯 Cíl projektu
-- Naučit se propojit Discord API s databází  
-- Implementovat základní ekonomiku (fiktivní kredity, sázky, výhry/prohry)  
-- Získávat aktuální kurzy pomocí scraperu  
-- Umožnit více uživatelům soutěžit o nejvyšší zůstatek  
-- Ukázat komplexní využití Pythonu v praxi  
+## 📌 Obsah
+- [Popis projektu](#-popis-projektu)
+- [Plán práce](#-plán-práce)
+- [Ukázkový kód](#-ukázkový-kód)
+- [Možná vylepšení](#-možná-vylepšení)
+- [Licence](#-licence)
 
 ---
 
-
+## 🔍 Popis projektu
+Robot sleduje černou čáru na světlém povrchu. Logika je založená na jednoduchém vyhodnocení senzorů – pokud je čára pod levým senzorem, robot se otočí doleva, pokud pod pravým, tak doprava, jinak jede rovně.  
 
 ---
 
-## 📂 Hlavní funkce bota
-- Registrace uživatelů a přidělení startovních kreditů  
-- Příkaz pro kontrolu zůstatku  
-- Sázení na dostupné zápasy s fiktivními kurzy  
-- Evidence sázek v databázi  
-- Vyhodnocování výsledků a úprava kreditů  
-- Leaderboard nejlepších uživatelů  
+## 📝 Plán práce
+1. Příprava podvozku a základní konstrukce  
+2. Implementace jednoduchého algoritmu sledování čáry  
+3. Testování na základní trati  
+4. Rozšíření o pokročilejší funkce (např. PID regulace, více senzorů)  
+5. Dokumentace a příprava prezentace  
+
