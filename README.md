@@ -12,18 +12,16 @@ Robot sleduje černou čáru na světlém povrchu. Logika je založená na jedno
 ---
 
 ## 📝 Plán práce
-1. Příprava podvozku a základní konstrukce  
-2. Implementace jednoduchého algoritmu sledování čáry  
-3. Testování na základní trati  
-4. Dokumentace a příprava prezentace  
+1. Příprava podvozku a základní konstrukce
+2. Vytvoření pcb desky pro vsechny komponenty 
+3. Implementace jednoduchého algoritmu sledování čáry  
+4. Testování na základní trati  
+5. Dokumentace a příprava prezentace  
 
 senzor:
 https://techfun.cz/produkt/modul-sledovani-cary-pro-auticka/
 motor:
 https://techfun.sk/en/product/dc-motor-1v-6v-r130/
-baterky:
-https://techfun.sk/en/produkt/ups-18650-battery-shield-v8-rozne-varianty/
-Motor driver shield: 
-https://techfun.sk/en/product/motor-driver-h-bridge-l9110/
+mikropočítač: Arduino nano
 
 <img width="900" height="655" alt="image" src="https://github.com/user-attachments/assets/cdb28fd6-1052-4bd7-a42c-9cfe4a2debfc" />
