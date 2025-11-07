@@ -15,33 +15,17 @@ struct_message myData;
 #define B1_A 4   // D7 – levý motor 1
 #define B1_B 5   // D8 – levý motor 2
 
-// === Konfigurace ===// Středová hodnota joysticku
-const int deadzone = 40;    
-
-// === Proměnné pro bezpečnostní stop ===
+const int deadzone = 40;
 unsigned long lastRecvTime = 0;
-const unsigned long timeout = 1000; // 1 sekunda bez dat → stop
+const unsigned long timeout = 1000;
+const int joyCenter = 800; 
 
-// === Funkce řízení motorů ===
-void motorStop() {
-  digitalWrite(A1_A, LOW);
-  digitalWrite(A1_B, LOW);
-  digitalWrite(B1_A, LOW);
-  digitalWrite(B1_B, LOW);
-}
-
-void motorForward() {
-  digitalWrite(A1_A, HIGH);
-  digitalWrite(A1_B, LOW);
-  digitalWrite(B1_A, LOW);
-  digitalWrite(B1_B, HIGH);
-}
-
-void motorBackward() {
-  digitalWrite(A1_A, LOW);
-  digitalWrite(A1_B, HIGH);
-  digitalWrite(B1_A, HIGH);
-  digitalWrite(B1_B, LOW);
+// === Univerzální funkce pro ovládání motorů ===
+void setMotors(bool a1a, bool a1b, bool b1a, bool b1b) {
+  digitalWrite(A1_A, a1a ? HIGH : LOW);
+  digitalWrite(A1_B, a1b ? HIGH : LOW);
+  digitalWrite(B1_A, b1a ? HIGH : LOW);
+  digitalWrite(B1_B, b1b ? HIGH : LOW);
 }
 
 // === Callback při přijetí dat ===
@@ -53,78 +37,53 @@ void OnDataRecv(uint8_t *mac, uint8_t *incomingData, uint8_t len) {
 
   // === Řízení motoru ===
   if (abs(joy - joyCenter) < deadzone) {
-        if (myData.button1 == 0) {
-      // ZPĚT - VLEVO
-      digitalWrite(A1_A, LOW);
-      digitalWrite(A1_B, HIGH);
-      digitalWrite(B1_A, LOW);
-      digitalWrite(B1_B, LOW);
+    // Střed / stop
+    if (myData.button1 == 0) {
+      setMotors(0, 1, 0, 0); //VLEVO
       Serial.println("Motor: ZPĚT - VLEVO");
     } 
     else if (myData.button3 == 0) {
-      // ZPĚT - VPRAVO
-      digitalWrite(A1_A, LOW);
-      digitalWrite(A1_B, LOW);
-      digitalWrite(B1_A, HIGH);
-      digitalWrite(B1_B, LOW);
+      setMotors(0, 0, 1, 0); //VPRAVO
       Serial.println("Motor: ZPĚT - VPRAVO");
     } 
-    else{
-    motorStop();
-    Serial.println("Motor: STOP");
+    else {
+      setMotors(0, 0, 0, 0); // STOP
+      Serial.println("Motor: STOP");
     }
-  } 
+  }  
   else if (joy < joyCenter) {
     // Pohyb vpřed
     if (myData.button1 == 0) {
-      // VLEVO
-      digitalWrite(A1_A, HIGH);
-      digitalWrite(A1_B, LOW);
-      digitalWrite(B1_A, LOW);
-      digitalWrite(B1_B, LOW);
+      setMotors(1, 0, 0, 0); // VPŘED - VLEVO
       Serial.println("Motor: VPŘED - VLEVO");
     } 
     else if (myData.button3 == 0) {
-      // VPRAVO
-      digitalWrite(A1_A, LOW);
-      digitalWrite(A1_B, LOW);
-      digitalWrite(B1_A, LOW);
-      digitalWrite(B1_B, HIGH);
+      setMotors(0, 0, 0, 1); // VPŘED - VPRAVO
       Serial.println("Motor: VPŘED - VPRAVO");
     } 
     else {
-      // ROVNĚ
-      motorForward();
+      setMotors(1, 0, 0, 1); // VPŘED
       Serial.println("Motor: VPŘED");
     }
   } 
-  else if (joy > joyCenter) {
+  else {
     // Pohyb zpět
     if (myData.button1 == 0) {
-      // ZPĚT - VLEVO
-      digitalWrite(A1_A, LOW);
-      digitalWrite(A1_B, HIGH);
-      digitalWrite(B1_A, LOW);
-      digitalWrite(B1_B, LOW);
+      setMotors(0, 1, 0, 0); // ZPĚT - VLEVO
       Serial.println("Motor: ZPĚT - VLEVO");
     } 
     else if (myData.button3 == 0) {
-      // ZPĚT - VPRAVO
-      digitalWrite(A1_A, LOW);
-      digitalWrite(A1_B, LOW);
-      digitalWrite(B1_A, HIGH);
-      digitalWrite(B1_B, LOW);
+      setMotors(0, 0, 1, 0); // ZPĚT - VPRAVO
       Serial.println("Motor: ZPĚT - VPRAVO");
     } 
     else {
-      // ROVNĚ
-      motorBackward();
+      setMotors(0, 1, 1, 0); // ZPĚT
       Serial.println("Motor: ZPĚT");
     }
   }
 }
 
-// === Nastavení ===
+// === Setup ===
 void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
@@ -134,7 +93,7 @@ void setup() {
   pinMode(B1_A, OUTPUT);
   pinMode(B1_B, OUTPUT);
 
-  motorStop();
+  setMotors(0,0,0,0); // STOP
 
   if (esp_now_init() != 0) {
     Serial.println("Chyba inicializace ESP-NOW");
@@ -149,6 +108,6 @@ void setup() {
 
 void loop() {
   if (millis() - lastRecvTime > timeout) {
-    motorStop();
+    setMotors(0,0,0,0); // STOP při timeoutu
   }
 }
