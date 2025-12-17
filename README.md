@@ -1,6 +1,6 @@
 # 🚗 ESP2866 RC Autíčko (Wi-Fi Remote Car)
 
-Tento projekt ukazuje, jak postavit jednoduché **RC autíčko ovládané přes Wi-Fi** pomocí **dvou ESP32-C6** mikrokontrolérů.  
+Tento projekt ukazuje, jak postavit jednoduché **RC autíčko ovládané přes Wi-Fi** pomocí **dvou ESP8266** mikrokontrolérů.  
 Jeden ESP8266 slouží jako **ovladač**, druhý jako **přijímač** připojený k **H-můstku** pro řízení dvou DC motorků
 ---
 
