@@ -24,3 +24,9 @@ Jeden ESP8266 slouží jako **ovladač**, druhý jako **přijímač** připojen�
 ESP2866 používají **Wi-Fi (ESP-NOW)**:
 - Ovladač posílá informace z tlacitek
 - Přijímač převádí příkazy na PWM signály pro H-můstek.
+
+
+# 🎥 YouTube Video
+
+▶️ Odkaz na video:  
+https://www.youtube.com/watch?v=MKybWMqmsl4
